@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.application' version '8.2.0'
+}
+
+android {
+    namespace 'com.pulse.audio'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.pulse.audio"
+        minSdk 28
+        targetSdk 36
+        versionCode 1
+        versionName "1.0.0"
+        manifestPlaceholders = [manifestApplicationId: "com.pulse.audio"]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    packagingOptions {
+        pickFirst 'META-INF/LICENSE.md'
+        pickFirst 'META-INF/NOTICE.md'
+    }
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.core:core:1.13.0'
+    implementation 'androidx.webkit:webkit:1.9.0'
+    implementation 'com.google.android.material:material:1.12.0'
+}

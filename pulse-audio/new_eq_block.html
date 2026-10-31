@@ -1,0 +1,62 @@
+    <section class="screen equalizer-screen" data-screen="equalizer" aria-label="Equalizer" style="background:#fff;">
+      <div class="screen-scroll eq-scroll" style="background:#fff;padding-top:28px;">
+        <header class="screen-head eq-head" style="background:#fff;border:none;padding:0 24px 12px;display:flex;align-items:center;justify-content:space-between;">
+          <button class="circle-button" data-nav="settings" aria-label="Back" style="background:#f4f4f5;width:36px;height:36px;border-radius:10px;"><svg class="icon" style="width:18px;height:18px;"><use href="#i-arrow-left"/></svg></button>
+          <h1 class="head-title" style="flex:1;text-align:center;font-family:'Manrope',sans-serif;font-weight:800;font-size:17px;letter-spacing:-0.03em;">Equalizer</h1>
+          <button class="circle-button" data-nav="devices" aria-label="Devices" style="background:#f4f4f5;width:36px;height:36px;border-radius:10px;"><svg class="icon" style="width:18px;height:18px;"><use href="#i-headphones"/></svg></button>
+        </header>
+
+        <div class="eq-hero" style="text-align:center;padding:16px 24px 28px;">
+          <img class="eq-hero-img" data-eq-device-thumb src="assets/devices/pulse-explore.webp" alt="" style="width:120px;height:120px;object-fit:contain;margin:0 auto 16px;display:block;filter:drop-shadow(0 12px 24px rgba(0,0,0,0.08));" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Crect width=%22120%22 height=%22120%22 rx=%2228%22 fill=%22%23eee%22/%3E%3C/svg%3E'">
+          <h2 class="eq-hero-name" data-eq-device-name style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.03em;margin:0 0 4px;color:#111;">PULSE Explore Pro</h2>
+          <p class="eq-hero-status" style="font-size:13px;color:#777;margin:0;font-weight:500;">Device connected</p>
+        </div>
+
+        <div class="eq-battery-row" style="display:flex;justify-content:center;gap:24px;padding:0 24px 24px;">
+          <div class="batt-circle" style="text-align:center;">
+            <div class="batt-ring" style="width:64px;height:64px;border-radius:50%;border:3px solid #eee;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-weight:800;font-size:14px;color:#111;">50%</div>
+            <small style="font-size:11px;color:#777;margin-top:4px;display:block;">Left earbud</small>
+          </div>
+          <div class="batt-circle" style="text-align:center;">
+            <div class="batt-ring" style="width:64px;height:64px;border-radius:50%;border:3px solid #eee;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-weight:800;font-size:14px;color:#111;">25%</div>
+            <small style="font-size:11px;color:#777;margin-top:4px;display:block;">Right earbud</small>
+          </div>
+          <div class="batt-circle" style="text-align:center;">
+            <div class="batt-ring" style="width:64px;height:64px;border-radius:50%;border:3px solid #eee;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-weight:800;font-size:14px;color:#111;">100%</div>
+            <small style="font-size:11px;color:#777;margin-top:4px;display:block;">Case</small>
+          </div>
+        </div>
+
+        <div class="eq-section" style="padding:0 24px 20px;">
+          <h3 style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#999;margin:0 0 14px;">Noise Control</h3>
+          <div class="control-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+            <button class="ctrl-btn is-active" data-anc="on" aria-pressed="true" style="background:#111;color:#fff;border-radius:14px;padding:14px 6px;text-align:center;font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;display:flex;flex-direction:column;align-items:center;gap:6px;border:none;cursor:pointer;">
+              <span style="width:36px;height:36px;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.2 13.5v-1.4a7.8 7.8 0 0 1 15.6 0v1.4"/><rect x="3" y="13" width="4" height="6.8" rx="2"/><rect x="17" y="13" width="4" height="6.8" rx="2"/><path d="M7 17.5h2M15 17.5h2"/></svg></span>
+              <span>Noise Reduction</span>
+            </button>
+            <button class="ctrl-btn" data-anc="off" aria-pressed="false" style="background:#f6f6f6;color:#333;border-radius:14px;padding:14px 6px;text-align:center;font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;display:flex;flex-direction:column;align-items:center;gap:6px;border:none;cursor:pointer;">
+              <span style="width:36px;height:36px;border-radius:50%;background:#e5e5e5;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></span>
+              <span>Close</span>
+            </button>
+            <button class="ctrl-btn" data-anc="transparency" aria-pressed="false" style="background:#f6f6f6;color:#333;border-radius:14px;padding:14px 6px;text-align:center;font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;display:flex;flex-direction:column;align-items:center;gap:6px;border:none;cursor:pointer;">
+              <span style="width:36px;height:36px;border-radius:50%;background:#e5e5e5;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h.01M8.5 8.5a5 5 0 0 1 7 0M11 12h.01M6.5 5.5a9 9 0 0 1 11 0M7 19h10"/></svg></span>
+              <span>Transparent</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="eq-section" style="padding:0 24px 28px;">
+          <h3 style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#999;margin:0 0 14px;">Sound</h3>
+          <button class="sound-row" data-nav="advanced-eq" style="width:100%;background:#f6f6f6;border-radius:14px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;border:none;font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;color:#111;cursor:pointer;">
+            <span>Equalizer</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Primary" style="background:#fff;border-top:1px solid #eee;">
+        <button class="nav-button is-active" data-nav="equalizer" aria-label="Home" style="color:#111;"><svg class="icon" style="width:22px;height:22px;"><use href="#i-home"/></svg></button>
+        <button class="nav-button" data-nav="devices" aria-label="Devices" style="color:#999;"><svg class="icon" style="width:22px;height:22px;"><use href="#i-headphones"/></svg></button>
+        <button class="nav-button" data-nav="settings" aria-label="Settings" style="color:#999;"><svg class="icon" style="width:22px;height:22px;"><use href="#i-grid"/></svg></button>
+      </nav>
+    </section>

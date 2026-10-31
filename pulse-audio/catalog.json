@@ -1,0 +1,51 @@
+{
+  "version": "2026.10.31",
+  "devices": [
+    {
+      "id": "pulse-horizon",
+      "brand": "PULSE",
+      "model": "Horizon Pro",
+      "name": "PULSE Horizon Pro",
+      "formFactor": "headphones",
+      "image": "assets/devices/pulse-explore.webp",
+      "color": "Obsidian",
+      "blurb": "PULSE Horizon Pro — just released over-ear headphones with hybrid ANC.",
+      "connectedByDefault": false,
+      "battery": { "single": 90 },
+      "lastBattery": 90,
+      "batteryText": "40h left",
+      "firmware": "v1.0.0",
+      "firmwareTarget": "v1.0.0",
+      "controlStyle": "button",
+      "managedSoftware": "PULSE Audio",
+      "capabilities": {
+        "anc": true, "transparency": true, "adaptive": true, "spatial": true, "autopause": true,
+        "sleeping": true, "gaming": true, "multipoint": true, "wirelessCharging": true,
+        "wearDetection": true, "firmware": true, "find": true, "eq": true
+      }
+    },
+    {
+      "id": "pulse-explore-2",
+      "brand": "PULSE",
+      "model": "Explore 2",
+      "name": "PULSE Explore 2",
+      "formFactor": "earbuds",
+      "image": "assets/devices/pulse-explore.webp",
+      "color": "Matte Black",
+      "blurb": "Next-generation PULSE earbuds with adaptive ANC and spatial audio.",
+      "connectedByDefault": false,
+      "battery": { "left": 95, "right": 93, "case": 80 },
+      "lastBattery": 95,
+      "batteryText": "8h 10m left",
+      "firmware": "v5.0.0",
+      "firmwareTarget": "v5.0.0",
+      "controlStyle": "touch",
+      "managedSoftware": "PULSE Audio",
+      "capabilities": {
+        "anc": true, "transparency": true, "adaptive": true, "spatial": true, "autopause": true,
+        "sleeping": true, "gaming": true, "multipoint": true, "wirelessCharging": true,
+        "wearDetection": true, "firmware": true, "find": true, "eq": true
+      }
+    }
+  ]
+}

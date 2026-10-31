@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f4f5">
+  <title>PULSE — Wireless Audio Companion</title>
+  <meta name="description" content="PULSE Audio companion app — tune your earbuds, personalise touch controls and get the perfect sound for every moment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m4 10.5 8-6.5 8 6.5V20H4z"/><path d="M9.5 20v-6h5v6"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m15.4 8.6-2 5.2-5.2 2 2-5.2z"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 20 14"><rect x="1" y="9" width="3" height="4" rx="1" fill="currentColor" stroke="none"/><rect x="6" y="6" width="3" height="7" rx="1" fill="currentColor" stroke="none"/><rect x="11" y="3" width="3" height="10" rx="1" fill="currentColor" stroke="none"/><rect x="16" y="0" width="3" height="13" rx="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 18 14"><path d="M1.5 4.5a13 13 0 0 1 15 0M4.2 7.2a9 9 0 0 1 9.6 0M7 9.8a5 5 0 0 1 4 0"/><circle cx="9" cy="12" r="1.1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-battery" viewBox="0 0 26 13"><rect x="1" y="1" width="21" height="11" rx="3.2"/><path d="M24 5v3.3" stroke-linecap="round"/><rect x="3.2" y="3.2" width="15" height="6.6" rx="1.7" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-battery-pill" viewBox="0 0 24 14"><rect x="2" y="2" width="17" height="10" rx="3"/><path d="M21 5v4"/><rect x="4" y="4" width="9" height="6" rx="1.5" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-touch" viewBox="0 0 24 24"><path d="M8.5 11V6.6a1.8 1.8 0 0 1 3.6 0v4.1"/><path d="M12.1 10.7V8.9a1.7 1.7 0 0 1 3.4 0v2.2"/><path d="M15.5 11.1V9.8a1.7 1.7 0 0 1 3.4 0v4.1c0 2.9-2.2 5.6-5.1 5.6h-.8a6 6 0 0 1-4.9-2.5l-2.4-3.4a1.8 1.8 0 0 1 2.6-2.4l1.7 1.4"/></symbol>
+    <symbol id="i-find" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="3"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.3 8.3 0 0 1 9.8 4 8.2 8.2 0 1 0 20 14.2Z"/></symbol>
+    <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M7.6 8h8.8c2.4 0 4.3 1.9 4.4 4.3l.2 3.2c.1 1.6-1.2 3-2.8 3-1.1 0-2.1-.6-2.7-1.6l-.8-1.4H9.3l-.8 1.4a3 3 0 0 1-2.7 1.6c-1.6 0-2.9-1.4-2.8-3l.2-3.2C3.4 9.9 5.2 8 7.6 8Z"/><path d="M8 11v4M6 13h4M16.2 12.3h.01M18.2 14h.01"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v11m-4-4 4 4 4-4"/><path d="M5 20h14"/></symbol>
+    <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="12.5" width="4.6" height="7.5" rx="2.1"/><rect x="16.4" y="12.5" width="4.6" height="7.5" rx="2.1"/></symbol>
+    <symbol id="i-anc" viewBox="0 0 24 24"><path d="M4.2 13.5v-1.4a7.8 7.8 0 0 1 15.6 0v1.4"/><rect x="3" y="13" width="4" height="6.8" rx="2"/><rect x="17" y="13" width="4" height="6.8" rx="2"/><path d="M7 17.5h2M15 17.5h2"/></symbol>
+    <symbol id="i-anc-off" viewBox="0 0 24 24"><path d="M4.2 13.5v-1.4a7.8 7.8 0 0 1 13.6-4.7M19.8 11.3v.8"/><rect x="3" y="13" width="4" height="6.8" rx="2"/><rect x="17" y="13" width="4" height="6.8" rx="2"/><path d="m4 3 16 18"/></symbol>
+    <symbol id="i-transparency" viewBox="0 0 24 24"><path d="M5 12h.01M8.5 8.5a5 5 0 0 1 7 0M11 12h.01M6.5 5.5a9 9 0 0 1 11 0M7 19h10"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="7" y="4.5" width="3.5" height="15" rx="1" fill="currentColor" stroke="none"/><rect x="13.5" y="4.5" width="3.5" height="15" rx="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 9.5h4l4.5-4v13L8 14.5H4z"/><path d="M16 9a4.2 4.2 0 0 1 0 6M18.5 6.5a7.6 7.6 0 0 1 0 11"/></symbol>
+    <symbol id="i-bluetooth" viewBox="0 0 24 24"><path d="m7 7 10 10-5 4V3l5 4L7 17"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.1"/><path d="M19.2 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.6 2.6-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-3.7v-.2a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.6 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3v-3.7h.4a1.7 1.7 0 0 0 1.6-1.1 1.7 1.7 0 0 0-.3-1.9L4.6 7l2.6-2.6.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6v-.4h3.7v.4a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.6 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v3.7h-.2a1.7 1.7 0 0 0-1.6 1.3Z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.2 5.8a5.2 5.2 0 0 0-7.4 0L12 6.6l-.8-.8a5.2 5.2 0 0 0-7.4 7.4L12 21l8.2-7.8a5.2 5.2 0 0 0 0-7.4Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.4 4.6L18 9l-4.6 1.4L12 15l-1.4-4.6L6 9l4.6-1.4zM19 15l.7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7z"/></symbol>
+    <symbol id="i-waves" viewBox="0 0 24 24"><path d="M3 12h2l2-5 3 10 3-13 3 15 2-7h3"/></symbol>
+    <symbol id="i-chevron-up" viewBox="0 0 24 24"><path d="m7 14 5-5 5 5"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 4v6h6"/><path d="M4.8 16a8 8 0 1 0 .4-8.7L4 10"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M9 21h6"/></symbol>
+    <symbol id="i-skip" viewBox="0 0 24 24"><path d="m6 5 9 7-9 7zM18 5v14"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 10.5V17M12 7h.01"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 3.1 8.2 7 10 3.9-1.8 7-5.2 7-10V6z"/><path d="m9 11.5 2 2 4-4"/></symbol>
+    <symbol id="i-eq" viewBox="0 0 24 24"><path d="M5 5v14M12 5v14M19 5v14"/><circle cx="5" cy="9" r="1.8" fill="currentColor"/><circle cx="12" cy="15" r="1.8" fill="currentColor"/><circle cx="19" cy="8" r="1.8" fill="currentColor"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="m4 20 4.4-1 10-10a2.1 2.1 0 0 0-3-3l-10 10z"/><path d="m13.4 7.6 3 3"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M6.1 9a7 7 0 0 1 11.4-2L20 12M4 12l2.5 5a7 7 0 0 0 11.4-2"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  </svg>
+
+  <div class="ambient" aria-hidden="true">
+    <span class="ambient-orb ambient-orb--one"></span>
+    <span class="ambient-orb ambient-orb--two"></span>
+    <img class="ambient-art ambient-art--top" src="assets/earbuds-black.png" alt="">
+    <img class="ambient-art ambient-art--bottom" src="assets/earbud-left.png" alt="">
+  </div>
+
+  <main class="showcase" id="showcase">
+    <header class="showcase-head">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-word">PULSE</span>
+        <span class="brand-divider"></span>
+        <span class="brand-sub">Audio companion</span>
+      </div>
+      <div class="showcase-hint">
+        <span class="live-dot"></span>
+        <span>Interactive product demo</span>
+      </div>
+    </header>
+
+    <section class="stage" id="stage" aria-label="PULSE app preview">
+      <div class="device-slot" data-slot="0">
+        <div class="phone" data-app data-initial="welcome" role="application" aria-label="PULSE app"></div>
+      </div>
+      <div class="device-slot" data-slot="1">
+        <div class="phone" data-app data-initial="equalizer" role="application" aria-label="PULSE equalizer"></div>
+      </div>
+      <div class="device-slot" data-slot="2">
+        <div class="phone" data-app data-initial="device" role="application" aria-label="PULSE device"></div>
+      </div>
+    </section>
+
+    <footer class="showcase-foot">
+      <p>Elevate your sound experience by effortlessly<br>connecting and optimizing your earbuds.</p>
+      <span class="foot-version">PULSE OS <b>v4.0.0</b></span>
+    </footer>
+  </main>
+
+  <template id="app-template">
+    <div class="statusbar" aria-hidden="true">
+      <span class="statusbar-time">9:40</span>
+      <div class="statusbar-icons">
+        <svg class="icon icon-signal"><use href="#i-signal"/></svg>
+        <svg class="icon icon-wifi"><use href="#i-wifi"/></svg>
+        <svg class="icon icon-battery"><use href="#i-battery"/></svg>
+      </div>
+    </div>
+
+    <section class="screen welcome-screen" data-screen="welcome" aria-label="Welcome">
+      <div class="welcome-glow"></div>
+      <div class="welcome-carousel" data-carousel>
+        <article class="welcome-slide is-active" data-slide="0">
+          <h1 class="welcome-title">Where Your<br>Music Finds<br>its Perfect<br><span class="last-line">Match<button class="headline-arrow" data-action="start" aria-label="Get started"><svg class="icon"><use href="#i-arrow-up-right"/></svg></button></span></h1>
+          <div class="bud-stage bud-stage--one" aria-hidden="true">
+            <span class="bud-aura"></span>
+            <span class="orbit orbit--outer"></span>
+            <span class="orbit orbit--inner"></span>
+            <img class="bud-art bud-art--silver" src="assets/earbuds-silver-right.png" alt="">
+            <img class="bud-art bud-art--black" src="assets/earbud-left.png" alt="">
+            <span class="spark spark--one"></span>
+            <span class="spark spark--two"></span>
+            <span class="spark spark--three"></span>
+          </div>
+        </article>
+
+        <article class="welcome-slide" data-slide="1">
+          <p class="slide-kicker">Adaptive noise cancelling</p>
+          <h1 class="welcome-title">Silence The<br>World. Hear<br>Every Detail.<br><span class="last-line">Clearly<button class="headline-arrow" data-action="start" aria-label="Get started"><svg class="icon"><use href="#i-arrow-up-right"/></svg></button></span></h1>
+          <div class="bud-stage bud-stage--two" aria-hidden="true">
+            <span class="bud-aura"></span>
+            <span class="orbit orbit--outer"></span>
+            <span class="orbit orbit--inner"></span>
+            <img class="bud-art bud-art--silver" src="assets/earbuds-black.png" alt="">
+            <span class="eq-ripple eq-ripple--one"></span>
+            <span class="eq-ripple eq-ripple--two"></span>
+            <span class="spark spark--one"></span>
+            <span class="spark spark--two"></span>
+          </div>
+        </article>
+
+        <article class="welcome-slide" data-slide="2">
+          <p class="slide-kicker">Made for every moment</p>
+          <h1 class="welcome-title">Your Sound.<br>Your Rules.<br>Your Pulse.<br><span class="last-line">Always<button class="headline-arrow" data-action="start" aria-label="Get started"><svg class="icon"><use href="#i-arrow-up-right"/></svg></button></span></h1>
+          <div class="bud-stage bud-stage--three" aria-hidden="true">
+            <span class="bud-aura"></span>
+            <span class="orbit orbit--outer"></span>
+            <span class="orbit orbit--inner"></span>
+            <img class="bud-art bud-art--silver" src="assets/earbuds-silver-right.png" alt="">
+            <img class="bud-art bud-art--black" src="assets/earbud-right.png" alt="">
+            <span class="spark spark--one"></span>
+            <span class="spark spark--two"></span>
+            <span class="spark spark--three"></span>
+          </div>
+        </article>
+      </div>
+
+      <div class="welcome-controls">
+        <div class="carousel-dots" role="tablist" aria-label="Intro slides">
+          <button class="carousel-dot is-active" data-go-slide="0" aria-label="Slide 1" aria-selected="true"></button>
+          <button class="carousel-dot" data-go-slide="1" aria-label="Slide 2" aria-selected="false"></button>
+          <button class="carousel-dot" data-go-slide="2" aria-label="Slide 3" aria-selected="false"></button>
+        </div>
+        <button class="start-dock" data-action="start">
+          <span class="start-circle"><svg class="icon"><use href="#i-arrow-up-right"/></svg></span>
+          <span class="start-label">Start</span>
+          <span class="start-meta">Explore your sound</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="screen device-screen" data-screen="device" aria-label="Device details">
+      <div class="screen-scroll">
+        <header class="screen-head">
+          <button class="circle-button" data-back aria-label="Go back"><svg class="icon"><use href="#i-arrow-left"/></svg></button>
+          <div class="head-actions">
+            <button class="device-pill" data-nav="equalizer"><span>Device</span><svg class="icon icon-chevron"><use href="#i-chevron-down"/></svg></button>
+            <button class="circle-button name-button" data-action="rename-active" aria-label="Rename device"><svg class="icon"><use href="#i-pencil"/></svg></button>
+            <button class="avatar" data-sheet="profile" aria-label="Open profile"><span>AR</span></button>
+          </div>
+        </header>
+
+        <div class="device-hero">
+          <span class="device-hero-halo"></span>
+          <span class="device-hero-ring"></span>
+          <img class="device-buds" data-device-image src="assets/devices/pulse-explore.webp" alt="PULSE Explore Pro" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Crect width=%22120%22 height=%22120%22 rx=%2228%22 fill=%22%23171719%22/%3E%3Ctext x=%2260%22 y=%2272%22 text-anchor=%22middle%22 font-size=%2242%22 font-weight=%22700%22 fill=%22%23fff%22%3EPUL%3C/text%3E%3C/svg%3E'">
+          <span class="spark spark--hero-one"></span>
+          <span class="spark spark--hero-two"></span>
+        </div>
+
+        <div class="device-identity">
+          <span class="device-brand" data-device-brand>PULSE</span>
+          <h1 data-device-name>PULSE Explore Pro</h1>
+          <div class="battery-chips" data-battery-chips></div>
+          <button class="capability-strip" data-action="open-capabilities" aria-label="View detected features">
+            <span class="capability-strip-label"><i></i> Detected features</span>
+            <span class="capability-chips" data-device-capability-chips></span>
+            <svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg>
+          </button>
+        </div>
+
+        <div class="device-panel">
+          <div data-controls-section>
+            <button class="list-row" data-sheet="gesture-double">
+              <span data-control-double-label>Double touch</span>
+              <span class="row-tail"><span class="row-value" data-gesture-label="double">Playback/Pause</span><svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg></span>
+            </button>
+            <button class="list-row" data-sheet="gesture-triple">
+              <span data-control-triple-label>Triple touch</span>
+              <span class="row-tail"><span class="row-value" data-gesture-label="triple">Playback/Pause</span><svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg></span>
+            </button>
+          </div>
+          <button class="list-row" data-action="find-device" data-find-row>
+            <span>Find headset</span>
+            <span class="row-tail"><svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg></span>
+          </button>
+
+          <div class="panel-divider"></div>
+
+          <div class="setting-row" data-sleeping-row>
+            <div class="setting-copy">
+              <h2>Sleeping Mode <span class="state-tag" data-state-tag="sleeping">ON</span></h2>
+              <p>Your device will enter sleeping mode when not connected to any device for over 5 minutes.</p>
+            </div>
+            <button class="switch is-on" data-toggle="sleeping" role="switch" aria-checked="true" aria-label="Sleeping mode"><span></span></button>
+          </div>
+
+          <div class="setting-row" data-gaming-row>
+            <div class="setting-copy">
+              <h2>Gaming Mode <span class="state-tag" data-state-tag="gaming">ON</span></h2>
+              <p>Reduce audio latency to keep every action perfectly in sync with what you see.</p>
+            </div>
+            <button class="switch is-on" data-toggle="gaming" role="switch" aria-checked="true" aria-label="Gaming mode"><span></span></button>
+          </div>
+
+          <div class="panel-divider"></div>
+
+          <button class="list-row firmware-row" data-action="firmware" data-firmware-row>
+            <span>Firmware update</span>
+            <span class="row-tail"><span class="row-value" data-firmware-version>v4.0.0</span><svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg></span>
+          </button>
+          <div class="list-row static-list-row" data-managed-software-row hidden>
+            <span>Device software</span>
+            <span class="row-tail"><span class="row-value" data-managed-software>Managed by Apple</span></span>
+          </div>
+        </div>
+
+        <p class="device-version">PULSE Audio · <span data-firmware-version>v4.0.0</span> · Connected</p>
+      </div>
+    </section>
+
+        <section class="screen equalizer-screen" data-screen="equalizer" aria-label="Equalizer" style="background:#fff;">
+      <div class="screen-scroll eq-scroll" style="background:#fff;padding-top:28px;">
+        <header class="screen-head eq-head" style="background:#fff;border:none;padding:0 24px 12px;display:flex;align-items:center;justify-content:space-between;">
+          <button class="circle-button" data-nav="settings" aria-label="Back" style="background:#f4f4f5;width:36px;height:36px;border-radius:10px;"><svg class="icon" style="width:18px;height:18px;"><use href="#i-arrow-left"/></svg></button>
+          <h1 class="head-title" style="flex:1;text-align:center;font-family:'Manrope',sans-serif;font-weight:800;font-size:17px;letter-spacing:-0.03em;">Equalizer</h1>
+          <button class="circle-button" data-nav="devices" aria-label="Devices" style="background:#f4f4f5;width:36px;height:36px;border-radius:10px;"><svg class="icon" style="width:18px;height:18px;"><use href="#i-headphones"/></svg></button>
+        </header>
+
+        <div class="eq-hero" style="text-align:center;padding:16px 24px 28px;">
+          <img class="eq-hero-img" data-eq-device-thumb data-action="device-details" src="assets/devices/pulse-explore.webp" alt="" style="width:120px;height:120px;object-fit:contain;margin:0 auto 16px;display:block;filter:drop-shadow(0 12px 24px rgba(0,0,0,0.08));cursor:pointer;" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Crect width=%22120%22 height=%22120%22 rx=%2228%22 fill=%22%23eee%22/%3E%3C/svg%3E'">
+          <h2 class="eq-hero-name" data-eq-device-name style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.03em;margin:0 0 4px;color:#111;">PULSE Explore Pro</h2>
+          <p class="eq-hero-status" style="font-size:13px;color:#777;margin:0;font-weight:500;">Device connected</p>
+        </div>
+
+        <div class="eq-battery-row" id="battery-row" style="display:flex;justify-content:center;gap:24px;padding:0 24px 24px;align-items:center;">
+          <div class="batt-circle headphones-only" style="text-align:center;display:none;">
+            <div class="batt-ring" data-battery-single style="width:72px;height:72px;border-radius:50%;border:3px solid #111;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-weight:800;font-size:16px;color:#111;">--%</div>
+            <small style="font-size:11px;color:#777;margin-top:6px;display:block;font-weight:600;">&nbsp;</small>
+          </div>
+          <div class="batt-circle earbuds-only" style="text-align:center;">
+            <div class="batt-ring" data-battery-left style="width:64px;height:64px;border-radius:50%;border:3px solid #eee;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-weight:800;font-size:14px;color:#111;">--%</div>
+            <small style="font-size:11px;color:#777;margin-top:4px;display:block;">&nbsp;</small>
+          </div>
+          <div class="batt-circle earbuds-only" style="text-align:center;">
+            <div class="batt-ring" data-battery-right style="width:64px;height:64px;border-radius:50%;border:3px solid #eee;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-weight:800;font-size:14px;color:#111;">--%</div>
+            <small style="font-size:11px;color:#777;margin-top:4px;display:block;">&nbsp;</small>
+          </div>
+          <div class="batt-circle earbuds-only" style="text-align:center;">
+            <div class="batt-ring" data-battery-case style="width:64px;height:64px;border-radius:50%;border:3px solid #eee;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-weight:800;font-size:14px;color:#111;">--%</div>
+            <small style="font-size:11px;color:#777;margin-top:4px;display:block;">&nbsp;</small>
+          </div>
+        </div>
+
+        <div class="eq-section" style="padding:0 24px 20px;">
+          <h3 style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#999;margin:0 0 14px;">Noise Control</h3>
+          <div class="control-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+            <button class="ctrl-btn is-active" data-anc="on" aria-pressed="true" style="background:#111;color:#fff;border-radius:14px;padding:14px 6px;text-align:center;font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;display:flex;flex-direction:column;align-items:center;gap:6px;border:none;cursor:pointer;">
+              <span style="width:36px;height:36px;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.2 13.5v-1.4a7.8 7.8 0 0 1 15.6 0v1.4"/><rect x="3" y="13" width="4" height="6.8" rx="2"/><rect x="17" y="13" width="4" height="6.8" rx="2"/><path d="M7 17.5h2M15 17.5h2"/></svg></span>
+              <span>Noise Reduction</span>
+            </button>
+            <button class="ctrl-btn" data-anc="off" aria-pressed="false" style="background:#f6f6f6;color:#333;border-radius:14px;padding:14px 6px;text-align:center;font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;display:flex;flex-direction:column;align-items:center;gap:6px;border:none;cursor:pointer;">
+              <span style="width:36px;height:36px;border-radius:50%;background:#e5e5e5;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></span>
+              <span>Close</span>
+            </button>
+            <button class="ctrl-btn" data-anc="transparency" aria-pressed="false" style="background:#f6f6f6;color:#333;border-radius:14px;padding:14px 6px;text-align:center;font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;display:flex;flex-direction:column;align-items:center;gap:6px;border:none;cursor:pointer;">
+              <span style="width:36px;height:36px;border-radius:50%;background:#e5e5e5;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h.01M8.5 8.5a5 5 0 0 1 7 0M11 12h.01M6.5 5.5a9 9 0 0 1 11 0M7 19h10"/></svg></span>
+              <span>Transparent</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="eq-section" style="padding:0 24px 28px;">
+          <h3 style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#999;margin:0 0 14px;">Sound</h3>
+          <button class="sound-row" data-nav="advanced-eq" style="width:100%;background:#f6f6f6;border-radius:14px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;border:none;font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;color:#111;cursor:pointer;">
+            <span>Equalizer</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Primary" style="background:#fff;border-top:1px solid #eee;">
+        <button class="nav-button is-active" data-nav="equalizer" aria-label="Home" style="color:#111;"><svg class="icon" style="width:22px;height:22px;"><use href="#i-home"/></svg></button>
+        <button class="nav-button" data-nav="devices" aria-label="Devices" style="color:#999;"><svg class="icon" style="width:22px;height:22px;"><use href="#i-headphones"/></svg></button>
+        <button class="nav-button" data-nav="settings" aria-label="Settings" style="color:#999;"><svg class="icon" style="width:22px;height:22px;"><use href="#i-grid"/></svg></button>
+      </nav>
+    </section>
+<section class="screen settings-screen" data-screen="settings" aria-label="Settings">
+      <div class="screen-scroll">
+        <header class="screen-head">
+          <button class="circle-button" data-nav="equalizer" aria-label="Back to home"><svg class="icon"><use href="#i-arrow-left"/></svg></button>
+          <h1 class="head-title">Settings</h1>
+          <button class="circle-button" data-sheet="profile" aria-label="Profile"><svg class="icon"><use href="#i-headphones"/></svg></button>
+        </header>
+
+        <div class="settings-intro">
+          <div class="profile-block">
+            <div class="profile-avatar">AR</div>
+            <div><h2>Alex Rivera</h2><p>PULSE member since 2024</p></div>
+            <button class="profile-edit" data-sheet="profile">Manage</button>
+          </div>
+          <div class="connection-card">
+            <span class="connection-icon connection-image"><img data-settings-device-image src="assets/devices/pulse-explore.webp" alt="" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Crect width=%22120%22 height=%22120%22 rx=%2228%22 fill=%22%23171719%22/%3E%3Ctext x=%2260%22 y=%2272%22 text-anchor=%22middle%22 font-size=%2242%22 font-weight=%22700%22 fill=%22%23fff%22%3EPUL%3C/text%3E%3C/svg%3E'"></span>
+            <div><b data-settings-device-name>PULSE Explore Pro</b><small data-settings-device-status>Wireless earbuds · 91% battery</small></div>
+            <span class="connected-pill"><i></i> Live</span>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <p class="group-label">Audio</p>
+          <div class="settings-card">
+            <button class="settings-row" data-nav="equalizer"><span><svg class="icon"><use href="#i-eq"/></svg>Equalizer</span><span class="row-tail"><span class="row-value" data-settings-preset>Default</span><svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg></span></button>
+            <button class="settings-row" data-nav="advanced-eq"><span><svg class="icon"><use href="#i-waves"/></svg>Advanced EQ</span><span class="row-tail"><span class="row-value">10-band</span><svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg></span></button>
+            <div class="settings-row static-row" data-adaptive-row><span><svg class="icon"><use href="#i-shield"/></svg>Adaptive EQ</span><button class="switch is-on" data-toggle="adaptive" role="switch" aria-checked="true" aria-label="Adaptive EQ"><span></span></button></div>
+            <div class="settings-row static-row" data-spatial-row><span><svg class="icon"><use href="#i-sparkles"/></svg>Spatial audio</span><button class="switch is-on" data-toggle="spatial" role="switch" aria-checked="true" aria-label="Spatial audio"><span></span></button></div>
+            <div class="settings-row static-row" data-autopause-row><span><svg class="icon"><use href="#i-headphones"/></svg>Auto pause</span><button class="switch" data-toggle="autopause" role="switch" aria-checked="false" aria-label="Auto pause"><span></span></button></div>
+          </div>
+        </div>
+
+        <div class="settings-group" data-controls-group>
+          <p class="group-label">Controls</p>
+          <div class="settings-card">
+            <button class="settings-row" data-sheet="gesture-double" data-controls-row><span><svg class="icon"><use href="#i-touch"/></svg><span data-control-label>Touch controls</span></span><span class="row-tail"><span class="row-value" data-gesture-label="double">Playback/Pause</span><svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg></span></button>
+            <div class="settings-row static-row" data-sleeping-row><span><svg class="icon"><use href="#i-moon"/></svg>Sleeping mode</span><button class="switch is-on" data-toggle="sleeping" role="switch" aria-checked="true" aria-label="Sleeping mode"><span></span></button></div>
+            <div class="settings-row static-row" data-gaming-row><span><svg class="icon"><use href="#i-gamepad"/></svg>Gaming mode</span><button class="switch is-on" data-toggle="gaming" role="switch" aria-checked="true" aria-label="Gaming mode"><span></span></button></div>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <p class="group-label">About</p>
+          <div class="settings-card">
+            <button class="settings-row" data-action="firmware" data-firmware-row><span><svg class="icon"><use href="#i-download"/></svg>Firmware update</span><span class="row-tail"><span class="row-value" data-firmware-version>v4.0.0</span><svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg></span></button>
+            <div class="settings-row static-row" data-managed-software-row hidden><span><svg class="icon"><use href="#i-download"/></svg>Device software</span><span class="row-tail"><span class="row-value" data-managed-software>Managed by Apple</span></span></div>
+            <button class="settings-row" data-action="open-capabilities"><span><svg class="icon"><use href="#i-check"/></svg>Detected features</span><span class="row-tail"><span class="row-value" data-capability-count>13 features</span><svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg></span></button>
+            <button class="settings-row" data-action="update-catalog"><span><svg class="icon"><use href="#i-refresh"/></svg>Device catalog update</span><span class="row-tail"><span class="row-value">Auto-add new drops</span><svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg></span></button>
+            <button class="settings-row" data-sheet="support"><span><svg class="icon"><use href="#i-info"/></svg>Help &amp; support</span><svg class="icon icon-chevron"><use href="#i-chevron-right"/></svg></button>
+          </div>
+        </div>
+
+        <p class="settings-version">PULSE Audio · <span data-settings-version>v4.0.0</span><br>Designed for effortless listening.</p>
+      </div>
+    </section>
+
+    <section class="screen devices-screen" data-screen="devices" aria-label="Connected devices">
+      <div class="screen-scroll devices-scroll">
+        <header class="screen-head devices-head">
+          <button class="circle-button" data-nav="equalizer" aria-label="Back to home"><svg class="icon"><use href="#i-arrow-left"/></svg></button>
+          <span class="head-title">Devices</span>
+          <button class="circle-button scan-button" data-action="scan-devices" aria-label="Scan for nearby devices"><svg class="icon"><use href="#i-refresh"/></svg></button>
+        </header>
+
+        <div class="devices-hero">
+          <div class="devices-hero-copy">
+            <span class="eyebrow" data-device-count>4 connected</span>
+            <h1>Your audio<br><em>network</em></h1>
+            <p>Every pair you own, in one place. Tap a device to make it active, find it, or give it a name of its own.</p>
+          </div>
+          <span class="auto-detect-pill"><i></i> Auto-detect</span>
+        </div>
+
+        <div class="active-device-card" data-active-device-card style="background:#18181b;border-radius:20px;padding:20px;margin:0 16px 20px;display:flex;gap:14px;align-items:center;">
+          <span class="active-card-art" style="flex-shrink:0;width:72px;height:72px;border-radius:16px;overflow:hidden;background:#222;display:block;"><img data-active-device-image src="assets/devices/pulse-explore.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2272%22 height=%2272%22%3E%3Crect width=%2272%22 height=%2272%22 rx=%2216%22 fill=%22%23333%22/%3E%3C/svg%3E'"></span>
+          <div class="active-card-copy" style="flex:1;min-width:0;">
+            <span class="eyebrow" data-active-device-brand style="font-size:10px;color:#888;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;">PULSE</span>
+            <h2 data-active-device-name style="font-family:'Manrope',sans-serif;font-weight:800;font-size:18px;color:#fff;margin:2px 0 4px;letter-spacing:-0.03em;">PULSE Explore Pro</h2>
+            <p style="font-size:11px;color:#aaa;margin:0;">Over-ear headphones · <span data-active-device-battery>82%</span> battery</p>
+            <div class="active-card-chips" data-active-device-chips style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;"></div>
+          </div>
+          <div class="active-card-actions" style="display:flex;gap:6px;flex-direction:column;align-items:flex-end;">
+            <button class="active-action" data-action="find-device" style="background:#333;color:#fff;border:none;border-radius:10px;padding:6px 10px;font-size:11px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;display:flex;align-items:center;gap:4px;"><svg class="icon" style="width:14px;height:14px;"><use href="#i-find"/></svg>Find</button>
+            <button class="active-action" data-action="rename-active" style="background:#333;color:#fff;border:none;border-radius:10px;padding:6px 10px;font-size:11px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;display:flex;align-items:center;gap:4px;"><svg class="icon" style="width:14px;height:14px;"><use href="#i-pencil"/></svg>Rename</button>
+            <button class="active-action active-action--solid" data-action="device-details" style="background:#fff;color:#111;border:none;border-radius:10px;padding:6px 10px;font-size:11px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;display:flex;align-items:center;gap:4px;">Details<svg class="icon" style="width:12px;height:12px;"><use href="#i-chevron-right"/></svg></button>
+          </div>
+        </div>
+
+        <div class="section-head devices-section-head">
+          <h2>Connected devices</h2>
+          <span class="devices-count" data-connected-count>4 paired</span>
+        </div>
+        <div class="connected-list" data-connected-list></div>
+
+        <div class="section-head devices-section-head nearby-head">
+          <h2>Nearby devices</h2>
+          <span class="scan-status" data-scan-status><i></i> Ready</span>
+        </div>
+        <div class="nearby-list" data-nearby-list></div>
+
+        <div class="brand-support">
+          <p class="group-label">Works with</p>
+          <div class="brand-chips">
+            <span class="brand-chip">Apple</span>
+            <span class="brand-chip">Samsung</span>
+            <span class="brand-chip">Sony</span>
+            <span class="brand-chip">Anker</span>
+            <span class="brand-chip">Bose</span>
+            <span class="brand-chip">JBL</span>
+            <span class="brand-chip">Sennheiser</span>
+            <span class="brand-chip">Nothing</span>
+            <span class="brand-chip">Google</span>
+            <span class="brand-chip">HOCO</span>
+            <span class="brand-chip">Baseus</span>
+          </div>
+        </div>
+        <p class="devices-footnote">PULSE detects supported Bluetooth audio devices and reads the features each one exposes. Hardware controls only appear when a device reports them.</p>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Primary">
+        <button class="nav-button" data-nav="equalizer" aria-label="Home"><svg class="icon"><use href="#i-home"/></svg></button>
+        <button class="nav-button is-active" data-nav="devices" aria-label="Devices"><svg class="icon"><use href="#i-headphones"/></svg></button>
+        <button class="nav-button" data-nav="settings" aria-label="Settings"><svg class="icon"><use href="#i-grid"/></svg></button>
+      </nav>
+    </section>
+
+    <section class="screen advanced-screen" data-screen="advanced-eq" aria-label="Advanced equalizer">
+      <div class="screen-scroll advanced-scroll">
+        <header class="screen-head">
+          <button class="circle-button" data-nav="equalizer" aria-label="Back to equalizer"><svg class="icon"><use href="#i-arrow-left"/></svg></button>
+          <h1 class="head-title">Equalizer</h1>
+          <button class="text-button reset-top" data-action="reset-eq"><svg class="icon"><use href="#i-reset"/></svg>Reset</button>
+        </header>
+
+        <div class="advanced-copy">
+          <span class="eyebrow">10-band · <span data-advanced-device>PULSE Explore Pro</span></span>
+          <h1>Shape your<br>signature sound.</h1>
+          <p>Drag each band to fine tune the way your music feels. Changes apply instantly.</p>
+        </div>
+
+        <div class="visualizer" aria-hidden="true">
+          <span style="--v:.22"></span><span style="--v:.34"></span><span style="--v:.5"></span><span style="--v:.66"></span><span style="--v:.4"></span><span style="--v:.78"></span><span style="--v:.92"></span><span style="--v:.56"></span><span style="--v:.44"></span><span style="--v:.7"></span><span style="--v:.84"></span><span style="--v:.58"></span><span style="--v:.36"></span><span style="--v:.74"></span><span style="--v:.9"></span><span style="--v:.62"></span><span style="--v:.48"></span><span style="--v:.68"></span><span style="--v:.54"></span><span style="--v:.86"></span><span style="--v:.32"></span><span style="--v:.6"></span><span style="--v:.94"></span><span style="--v:.52"></span><span style="--v:.42"></span><span style="--v:.8"></span><span style="--v:.64"></span><span style="--v:.9"></span><span style="--v:.38"></span><span style="--v:.72"></span><span style="--v:.28"></span><span style="--v:.82"></span><span style="--v:.58"></span><span style="--v:.46"></span><span style="--v:.88"></span><span style="--v:.54"></span><span style="--v:.76"></span><span style="--v:.34"></span><span style="--v:.66"></span><span style="--v:.48"></span>
+        </div>
+
+        <div class="advanced-card">
+          <div class="advanced-labels top-labels">
+            <span>+12</span><span>0</span><span>−12</span>
+          </div>
+          <div class="slider-bank" data-slider-bank>
+            <div class="vertical-band"><span class="band-value">0</span><input type="range" min="-12" max="12" step="1" value="0" data-band="32" aria-label="32 hertz"><span class="band-label">32</span></div>
+            <div class="vertical-band"><span class="band-value">0</span><input type="range" min="-12" max="12" step="1" value="0" data-band="64" aria-label="64 hertz"><span class="band-label">64</span></div>
+            <div class="vertical-band"><span class="band-value">0</span><input type="range" min="-12" max="12" step="1" value="0" data-band="125" aria-label="125 hertz"><span class="band-label">125</span></div>
+            <div class="vertical-band"><span class="band-value">0</span><input type="range" min="-12" max="12" step="1" value="0" data-band="250" aria-label="250 hertz"><span class="band-label">250</span></div>
+            <div class="vertical-band"><span class="band-value">0</span><input type="range" min="-12" max="12" step="1" value="0" data-band="500" aria-label="500 hertz"><span class="band-label">500</span></div>
+            <div class="vertical-band"><span class="band-value">0</span><input type="range" min="-12" max="12" step="1" value="0" data-band="1000" aria-label="1 kilohertz"><span class="band-label">1k</span></div>
+            <div class="vertical-band"><span class="band-value">0</span><input type="range" min="-12" max="12" step="1" value="0" data-band="2000" aria-label="2 kilohertz"><span class="band-label">2k</span></div>
+            <div class="vertical-band"><span class="band-value">0</span><input type="range" min="-12" max="12" step="1" value="0" data-band="4000" aria-label="4 kilohertz"><span class="band-label">4k</span></div>
+            <div class="vertical-band"><span class="band-value">0</span><input type="range" min="-12" max="12" step="1" value="0" data-band="8000" aria-label="8 kilohertz"><span class="band-label">8k</span></div>
+            <div class="vertical-band"><span class="band-value">0</span><input type="range" min="-12" max="12" step="1" value="0" data-band="16000" aria-label="16 kilohertz"><span class="band-label">16k</span></div>
+          </div>
+        </div>
+
+        <div class="advanced-actions">
+          <button class="outline-button" data-nav="equalizer">Cancel</button>
+          <button class="primary-button" data-action="save-eq">Save profile</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="sheet-backdrop" data-sheet-backdrop hidden></div>
+    <div class="sheet-host" data-sheet-host aria-live="polite"></div>
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+    <div class="find-overlay" data-find-overlay hidden>
+      <div class="find-modal">
+        <button class="circle-button find-close" data-action="close-find" aria-label="Close"><svg class="icon"><use href="#i-x"/></svg></button>
+        <div class="radar" aria-hidden="true"><span></span><span></span><span></span><i></i><img class="find-art" data-find-image src="assets/devices/pulse-explore.webp" alt="" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Crect width=%22120%22 height=%22120%22 rx=%2228%22 fill=%22%23171719%22/%3E%3Ctext x=%2260%22 y=%2272%22 text-anchor=%22middle%22 font-size=%2242%22 font-weight=%22700%22 fill=%22%23fff%22%3EPUL%3C/text%3E%3C/svg%3E'"></div>
+        <span class="eyebrow" data-find-eyebrow>Locating your earbuds</span>
+        <h2 data-find-name>PULSE Explore Pro</h2>
+        <p data-find-copy>Your earbuds are nearby. The signal is getting stronger.</p>
+        <div class="find-signal"><b>Strong signal</b><span>≈ 1.2 m away</span></div>
+        <button class="primary-button" data-action="stop-find">Stop ringing</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
